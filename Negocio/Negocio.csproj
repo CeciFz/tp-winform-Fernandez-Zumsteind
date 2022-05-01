@@ -56,7 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AccesoDatos.cs" />
+    <Compile Include="ArticuloNegocio.cs" />
+    <Compile Include="CategoriaNegocio.cs" />
+    <Compile Include="MarcaNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +77,16 @@
   <ItemGroup>
     <Content Include="script_db\CATALOGO_DB_v2.sql" />
     <Content Include="script_db\SQLQuery1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppCatalogo\AppCatalogo.csproj">
+      <Project>{1b49415c-e779-4b55-8cd1-da561f0f2c66}</Project>
+      <Name>AppCatalogo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{81b5991d-b7ad-48b1-9f26-d5c45b0eaef0}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

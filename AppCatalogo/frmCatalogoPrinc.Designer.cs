@@ -1,6 +1,6 @@
 ﻿namespace AppCatalogo
 {
-    partial class Form1
+    partial class frmCatalogoPrinc
     {
         /// <summary>
         /// Required designer variable.

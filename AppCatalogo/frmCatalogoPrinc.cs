@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppCatalogo
 {
-    public partial class Form1 : Form
+    public partial class frmCatalogoPrinc : Form
     {
-        public Form1()
+        public frmCatalogoPrinc()
         {
             InitializeComponent();
         }
