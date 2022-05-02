@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCatalogo", "AppCatalogo\AppCatalogo.csproj", "{1B49415C-E779-4B55-8CD1-DA561F0F2C66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{81B5991D-B7AD-48B1-9F26-D5C45B0EAEF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Modelo\Dominio.csproj", "{81B5991D-B7AD-48B1-9F26-D5C45B0EAEF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{BBEF6AFF-938D-4E17-928C-A131023A1B54}"
 EndProject

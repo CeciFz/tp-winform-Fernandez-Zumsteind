@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelo
+namespace Dominio
 {
     public class Articulo
     {
-        public int id { get; set; }
-        public string codigo { get; set; }
-        public string nombre { get; set; }
-        public string descripcion { get; set; }
-        public Marca idMarca { get; set; }
-        public Categoria idCategoria { get; set; }
-        public string imagenUrl { get; set; }
-        public float precio { get; set; }
+        public int Id { get; set; }
+        public string Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public Marca IdMarca { get; set; }
+        public Categoria IdCategoria { get; set; }
+        public string ImagenUrl { get; set; }
+        public float Precio { get; set; }
     }
 }

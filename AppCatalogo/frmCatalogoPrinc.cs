@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace AppCatalogo
 {
@@ -15,6 +16,14 @@ namespace AppCatalogo
         public frmCatalogoPrinc()
         {
             InitializeComponent();
+        }
+
+        private void frmCatalogoPrinc_Load(object sender, EventArgs e)
+        {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = articuloNegocio.listarArticulos();
+
+
         }
     }
 }

@@ -79,14 +79,13 @@
     <Content Include="script_db\SQLQuery1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AppCatalogo\AppCatalogo.csproj">
-      <Project>{1b49415c-e779-4b55-8cd1-da561f0f2c66}</Project>
-      <Name>AppCatalogo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modelo\Modelo.csproj">
+    <ProjectReference Include="..\Modelo\Dominio.csproj">
       <Project>{81b5991d-b7ad-48b1-9f26-d5c45b0eaef0}</Project>
-      <Name>Modelo</Name>
+      <Name>Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
