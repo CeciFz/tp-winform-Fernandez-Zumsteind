@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+//probando conexionfacu
 namespace Negocio
 {
     public class AccesoDatos
@@ -18,7 +18,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server =.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true");
+            conexion = new SqlConnection("server =ZUMSTEIND; database = CATALOGO_DB; integrated security = true");
             comando = new SqlCommand();
         }
 
