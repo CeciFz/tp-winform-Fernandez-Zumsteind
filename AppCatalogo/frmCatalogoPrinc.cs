@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 
+
 namespace AppCatalogo
 {
     public partial class frmCatalogoPrinc : Form
@@ -23,6 +24,13 @@ namespace AppCatalogo
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             dgvArticulos.DataSource = articuloNegocio.listarArticulos();
 
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            dgvCategoria.DataSource = categoriaNegocio.listarCategoria();
+
+        }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
