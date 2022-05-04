@@ -27,6 +27,9 @@ namespace AppCatalogo
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             dgvCategoria.DataSource = categoriaNegocio.listarCategoria();
 
+            MarcaNegocio MarcaNegocio = new MarcaNegocio();
+            dgvMarca.DataSource = MarcaNegocio.listarMarca();
+
         }
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
