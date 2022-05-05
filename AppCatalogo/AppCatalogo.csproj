@@ -52,6 +52,12 @@
     <Compile Include="frmCatalogoPrinc.Designer.cs">
       <DependentUpon>frmCatalogoPrinc.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestionArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionArticulos.Designer.cs">
+      <DependentUpon>gestionArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCatalogoPrinc.resx">

@@ -36,5 +36,15 @@ namespace AppCatalogo
         {
 
         }
+
+        private void entrar_Click(object sender, EventArgs e)
+        {
+             gestionArticulos ventana = new gestionArticulos();
+
+            ventana.ShowDialog();
+            
+
+
+        }
     }
 }
