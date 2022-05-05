@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.dgvCategoria = new System.Windows.Forms.DataGridView();
-            this.dgvMarca = new System.Windows.Forms.DataGridView();
             this.entrar = new System.Windows.Forms.Button();
             this.tituloinicio = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -40,46 +38,33 @@
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.labeltitulo = new System.Windows.Forms.Label();
+            this.dgvMarca = new System.Windows.Forms.DataGridView();
+            this.dgvCategoria = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(144, 414);
+            this.dgvArticulos.Location = new System.Drawing.Point(23, 414);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(100, 96);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             // 
-            // dgvCategoria
-            // 
-            this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategoria.Location = new System.Drawing.Point(711, 427);
-            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvCategoria.Name = "dgvCategoria";
-            this.dgvCategoria.Size = new System.Drawing.Size(110, 96);
-            this.dgvCategoria.TabIndex = 1;
-            // 
-            // dgvMarca
-            // 
-            this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarca.Location = new System.Drawing.Point(441, 399);
-            this.dgvMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvMarca.Name = "dgvMarca";
-            this.dgvMarca.Size = new System.Drawing.Size(159, 111);
-            this.dgvMarca.TabIndex = 2;
-            // 
             // entrar
             // 
-            this.entrar.Location = new System.Drawing.Point(482, 276);
+            this.entrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.entrar.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entrar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.entrar.Location = new System.Drawing.Point(195, 257);
             this.entrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.entrar.Name = "entrar";
-            this.entrar.Size = new System.Drawing.Size(118, 51);
+            this.entrar.Size = new System.Drawing.Size(158, 86);
             this.entrar.TabIndex = 4;
             this.entrar.Text = "Entrar";
             this.entrar.UseVisualStyleBackColor = true;
@@ -104,7 +89,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1066, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(555, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -144,22 +129,41 @@
             // labeltitulo
             // 
             this.labeltitulo.AutoSize = true;
-            this.labeltitulo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labeltitulo.BackColor = System.Drawing.Color.Transparent;
             this.labeltitulo.Font = new System.Drawing.Font("Sitka Display", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitulo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labeltitulo.Location = new System.Drawing.Point(250, 156);
+            this.labeltitulo.ForeColor = System.Drawing.Color.Maroon;
+            this.labeltitulo.Location = new System.Drawing.Point(126, 133);
             this.labeltitulo.Name = "labeltitulo";
-            this.labeltitulo.Size = new System.Drawing.Size(496, 50);
+            this.labeltitulo.Size = new System.Drawing.Size(301, 50);
             this.labeltitulo.TabIndex = 7;
-            this.labeltitulo.Text = "Gestion de Articulos de Comercios";
+            this.labeltitulo.Text = "Gestion de Articulos\r\n";
+            // 
+            // dgvMarca
+            // 
+            this.dgvMarca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarca.Location = new System.Drawing.Point(307, 412);
+            this.dgvMarca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvMarca.Name = "dgvMarca";
+            this.dgvMarca.Size = new System.Drawing.Size(159, 111);
+            this.dgvMarca.TabIndex = 2;
+            // 
+            // dgvCategoria
+            // 
+            this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategoria.Location = new System.Drawing.Point(565, 412);
+            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvCategoria.Name = "dgvCategoria";
+            this.dgvCategoria.Size = new System.Drawing.Size(110, 96);
+            this.dgvCategoria.TabIndex = 1;
+            this.dgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellContentClick);
             // 
             // frmCatalogoPrinc
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1066, 523);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(555, 419);
             this.Controls.Add(this.labeltitulo);
             this.Controls.Add(this.tituloinicio);
             this.Controls.Add(this.entrar);
@@ -168,19 +172,19 @@
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.IsMdiContainer = true;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "frmCatalogoPrinc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmCatalogoPrinc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,8 +193,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvArticulos;
-        private System.Windows.Forms.DataGridView dgvCategoria;
-        private System.Windows.Forms.DataGridView dgvMarca;
         private System.Windows.Forms.Button entrar;
         private System.Windows.Forms.Label tituloinicio;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -200,6 +202,8 @@
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label labeltitulo;
+        private System.Windows.Forms.DataGridView dgvMarca;
+        private System.Windows.Forms.DataGridView dgvCategoria;
     }
 }
 

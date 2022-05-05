@@ -63,6 +63,9 @@
     <EmbeddedResource Include="frmCatalogoPrinc.resx">
       <DependentUpon>frmCatalogoPrinc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gestionArticulos.resx">
+      <DependentUpon>gestionArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

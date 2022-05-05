@@ -39,11 +39,17 @@ namespace AppCatalogo
 
         private void entrar_Click(object sender, EventArgs e)
         {
-             gestionArticulos ventana = new gestionArticulos();
+             frmmenu ventana = new frmmenu();
+            ///ventana.MdiParent = this;
 
             ventana.ShowDialog();
             
 
+
+        }
+
+        private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace AppCatalogo
 {
-    public partial class gestionArticulos : Form
+    public partial class frmmenu : Form
     {
-        public gestionArticulos()
+        public frmmenu()
         {
             InitializeComponent();
+        }
+
+        private void buttoneliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void v_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
