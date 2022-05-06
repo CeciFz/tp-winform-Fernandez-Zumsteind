@@ -21,14 +21,7 @@ namespace AppCatalogo
 
         private void frmCatalogoPrinc_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            dgvArticulos.DataSource = articuloNegocio.listarArticulos();
-
-            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-            dgvCategoria.DataSource = categoriaNegocio.listarCategoria();
-
-            MarcaNegocio MarcaNegocio = new MarcaNegocio();
-            dgvMarca.DataSource = MarcaNegocio.listarMarca();
+           ///
 
         }
 
@@ -49,6 +42,11 @@ namespace AppCatalogo
         }
 
         private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvMarca_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

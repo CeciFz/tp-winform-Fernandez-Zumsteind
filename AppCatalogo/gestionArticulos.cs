@@ -26,5 +26,12 @@ namespace AppCatalogo
         {
 
         }
+
+        private void buttonlistar_Click(object sender, EventArgs e)
+        {
+            frmListadoArticulos ventana = new frmListadoArticulos();
+            ///ve
+            ventana.ShowDialog();
+        }
     }
 }

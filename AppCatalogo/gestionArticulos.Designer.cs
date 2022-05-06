@@ -101,13 +101,15 @@ namespace AppCatalogo
             this.buttonlistar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonlistar.AutoSize = true;
             this.buttonlistar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonlistar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonlistar.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonlistar.Location = new System.Drawing.Point(27, 205);
             this.buttonlistar.Name = "buttonlistar";
-            this.buttonlistar.Size = new System.Drawing.Size(212, 93);
+            this.buttonlistar.Size = new System.Drawing.Size(216, 93);
             this.buttonlistar.TabIndex = 5;
             this.buttonlistar.Text = " Listado de artículos";
             this.buttonlistar.UseVisualStyleBackColor = true;
+            this.buttonlistar.Click += new System.EventHandler(this.buttonlistar_Click);
             // 
             // buttonbuscar
             // 
