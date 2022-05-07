@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using Dominio;
 
 namespace AppCatalogo
 {
     public partial class frmmenu : Form
     {
+
         public frmmenu()
         {
             InitializeComponent();
@@ -29,9 +32,11 @@ namespace AppCatalogo
 
         private void buttonlistar_Click(object sender, EventArgs e)
         {
-            frmListadoArticulos ventana = new frmListadoArticulos();
-            ///ve
+            frmListarArticulos ventana = new frmListarArticulos();
             ventana.ShowDialog();
         }
+
+
+        
     }
 }

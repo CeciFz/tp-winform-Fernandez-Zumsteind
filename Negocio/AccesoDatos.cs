@@ -18,7 +18,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server =ZUMSTEIND; database = CATALOGO_DB; integrated security = true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database = CATALOGO_DB; integrated security = true");
             comando = new SqlCommand();
         }
 

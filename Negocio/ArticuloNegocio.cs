@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select Codigo, Nombre, Descripcion , Precio from ARTICULOS");
+                datos.setearConsulta("select A.Codigo, A.Nombre, A.Descripcion, M.Descripcion Marca, C.Descripcion Categoria, A.Precio, A.ImagenUrl from ARTICULOS A, MARCAS M, CATEGORIAS C where M.Id = A.IdMarca AND C.Id = A.IdCategoria");
                 datos.lecturaDatos();
 
                 while (datos.Lector.Read())
@@ -26,8 +26,17 @@ namespace Negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    //aux.Precio = (float)datos.Lector["Precio"];  
-                    // TODO: Ver cómo es el casteo de money a float
+
+                    aux.IdMarca = new Marca();
+                    aux.IdCategoria = new Categoria();
+
+                    aux.IdMarca.Descripcion = (String)datos.Lector["Marca"];
+                    aux.IdCategoria.Descripcion = (String)datos.Lector["Categoria"];
+
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))  aux.ImagenUrl = (String)datos.Lector["ImagenUrl"];
+
+                    aux.Precio = (decimal)datos.Lector["Precio"];  
+                    
 
                     lista.Add(aux);
                 }
