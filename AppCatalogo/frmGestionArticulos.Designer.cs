@@ -93,7 +93,7 @@ namespace AppCatalogo
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(212, 92);
             this.buttonAgregar.TabIndex = 4;
-            this.buttonAgregar.Text = "Agregar articulos";
+            this.buttonAgregar.Text = "Agregar artículos";
             this.buttonAgregar.UseVisualStyleBackColor = true;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
@@ -122,7 +122,7 @@ namespace AppCatalogo
             this.buttonbuscar.Name = "buttonbuscar";
             this.buttonbuscar.Size = new System.Drawing.Size(212, 92);
             this.buttonbuscar.TabIndex = 6;
-            this.buttonbuscar.Text = "Buscar articulo";
+            this.buttonbuscar.Text = "Buscar artículo";
             this.buttonbuscar.UseVisualStyleBackColor = true;
             // 
             // buttonmodificar
@@ -135,7 +135,7 @@ namespace AppCatalogo
             this.buttonmodificar.Name = "buttonmodificar";
             this.buttonmodificar.Size = new System.Drawing.Size(212, 92);
             this.buttonmodificar.TabIndex = 7;
-            this.buttonmodificar.Text = "Modificar articulos";
+            this.buttonmodificar.Text = "Modificar artículos";
             this.buttonmodificar.UseVisualStyleBackColor = true;
             this.buttonmodificar.Click += new System.EventHandler(this.buttonmodificar_Click);
             // 
@@ -149,7 +149,7 @@ namespace AppCatalogo
             this.buttoneliminar.Name = "buttoneliminar";
             this.buttoneliminar.Size = new System.Drawing.Size(212, 92);
             this.buttoneliminar.TabIndex = 8;
-            this.buttoneliminar.Text = "Eliminar articulo";
+            this.buttoneliminar.Text = "Eliminar artículo";
             this.buttoneliminar.UseVisualStyleBackColor = true;
             this.buttoneliminar.Click += new System.EventHandler(this.buttoneliminar_Click);
             // 
@@ -163,7 +163,7 @@ namespace AppCatalogo
             this.buttondetalle.Name = "buttondetalle";
             this.buttondetalle.Size = new System.Drawing.Size(212, 92);
             this.buttondetalle.TabIndex = 9;
-            this.buttondetalle.Text = "Ver detalle\r\narticulo";
+            this.buttondetalle.Text = "Ver detalle\r\nartículo";
             this.buttondetalle.UseVisualStyleBackColor = true;
             // 
             // frmmenu

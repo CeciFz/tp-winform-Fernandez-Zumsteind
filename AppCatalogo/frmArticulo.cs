@@ -47,7 +47,7 @@ namespace AppCatalogo
                 articulo.ImagenUrl = txtUrlImg.Text;
                 articulo.Marca = (Marca)cboMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
-                articulo.Precio = int.Parse(txtPrecio.Text);
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
 
                 if (articulo.Id != 0)
                 {
@@ -75,13 +75,16 @@ namespace AppCatalogo
         {
 
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
             try
             {
 
-                cboMarca.DataSource = articuloNegocio.listarArticulos();
-                cboMarca.ValueMember = "Id"; 
-                cboMarca.DisplayMember = "Descripcion"; 
-                cboCategoria.DataSource = articuloNegocio.listarArticulos();
+                cboMarca.DataSource = marcaNegocio.listarMarca();
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
+                cboCategoria.DataSource = categoriaNegocio.listarCategoria();
                 cboCategoria.ValueMember = "Id";
                 cboCategoria.DisplayMember = "Descripcion";
 
@@ -91,11 +94,11 @@ namespace AppCatalogo
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
                     txtUrlImg.Text = articulo.ImagenUrl;
-                    cboMarca.SelectedItem = articulo.Marca.Id;
-                    cboCategoria.SelectedItem = articulo.Categoria.Id;
-                    txtPrecio.Text = articulo.Precio.ToString();
-
                     cargarImagen(articulo.ImagenUrl);
+
+                    cboMarca.SelectedValue = articulo.Marca.Id;
+                    cboCategoria.SelectedValue = articulo.Categoria.Id;
+                    txtPrecio.Text = articulo.Precio.ToString();
 
                 }
 

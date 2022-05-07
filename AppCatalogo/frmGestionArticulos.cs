@@ -25,7 +25,7 @@ namespace AppCatalogo
 
         }
 
-        private void v_Load(object sender, EventArgs e)
+        private void v_Load(object sender, EventArgs e)  //TODO Eliminar
         {
 
         }

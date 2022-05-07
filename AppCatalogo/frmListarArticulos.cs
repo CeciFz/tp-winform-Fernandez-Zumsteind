@@ -79,7 +79,7 @@ namespace AppCatalogo
         {
            Articulo opcion;
            opcion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-           frmArticulo modificarArticulo = new frmArticulo();
+           frmArticulo modificarArticulo = new frmArticulo(opcion);
            modificarArticulo.ShowDialog();
         }
     }
