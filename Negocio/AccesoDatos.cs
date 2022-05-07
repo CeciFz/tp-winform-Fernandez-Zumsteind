@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-//probando conexionfacu
+
+
 namespace Negocio
 {
     public class AccesoDatos
@@ -49,6 +50,27 @@ namespace Negocio
             if (lector != null)
                 lector.Close();
             conexion.Close();
+        }
+
+        public void SetearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
 
 

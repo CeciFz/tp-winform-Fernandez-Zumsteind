@@ -36,7 +36,16 @@ namespace AppCatalogo
             ventana.ShowDialog();
         }
 
+        private void buttonAgregar_Click(object sender, EventArgs e)
+        {
+            frmArticulo altaArticulo = new frmArticulo();
+            altaArticulo.ShowDialog();
+        }
 
-        
+        private void buttonmodificar_Click(object sender, EventArgs e)
+        {
+            frmListarArticulos seleccionarArticulo  = new frmListarArticulos(true); 
+            seleccionarArticulo.ShowDialog();   
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace AppCatalogo
         private void InitializeComponent()
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.labeltitulo = new System.Windows.Forms.Label();
+            this.lbltitulo = new System.Windows.Forms.Label();
             this.pbxFotoArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoArticulo)).BeginInit();
@@ -41,28 +41,30 @@ namespace AppCatalogo
             this.dgvArticulos.AllowUserToAddRows = false;
             this.dgvArticulos.AllowUserToDeleteRows = false;
             this.dgvArticulos.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvArticulos.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvArticulos.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvArticulos.Location = new System.Drawing.Point(358, 105);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(643, 306);
             this.dgvArticulos.TabIndex = 4;
+            this.dgvArticulos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellDoubleClick);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
-            // labeltitulo
+            // lbltitulo
             // 
-            this.labeltitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labeltitulo.AutoSize = true;
-            this.labeltitulo.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitulo.Location = new System.Drawing.Point(372, 24);
-            this.labeltitulo.Name = "labeltitulo";
-            this.labeltitulo.Size = new System.Drawing.Size(303, 36);
-            this.labeltitulo.TabIndex = 6;
-            this.labeltitulo.Text = "Listado de Artículos";
+            this.lbltitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbltitulo.AutoSize = true;
+            this.lbltitulo.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitulo.Location = new System.Drawing.Point(372, 24);
+            this.lbltitulo.Name = "lbltitulo";
+            this.lbltitulo.Size = new System.Drawing.Size(303, 36);
+            this.lbltitulo.TabIndex = 6;
+            this.lbltitulo.Text = "Listado de Artículos";
             // 
             // pbxFotoArticulo
             // 
@@ -77,10 +79,10 @@ namespace AppCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1053, 480);
             this.Controls.Add(this.pbxFotoArticulo);
-            this.Controls.Add(this.labeltitulo);
+            this.Controls.Add(this.lbltitulo);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "frmListarArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -95,7 +97,7 @@ namespace AppCatalogo
 
         #endregion
         private System.Windows.Forms.DataGridView dgvArticulos;
-        private System.Windows.Forms.Label labeltitulo;
+        private System.Windows.Forms.Label lbltitulo;
         private System.Windows.Forms.PictureBox pbxFotoArticulo;
     }
 }

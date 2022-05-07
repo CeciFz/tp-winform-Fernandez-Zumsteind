@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
-//cambio
+
+
 namespace Negocio
 {
     public class ArticuloNegocio
@@ -27,11 +28,11 @@ namespace Negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
-                    aux.IdMarca = new Marca();
-                    aux.IdCategoria = new Categoria();
+                    aux.Marca = new Marca();
+                    aux.Categoria = new Categoria();
 
-                    aux.IdMarca.Descripcion = (String)datos.Lector["Marca"];
-                    aux.IdCategoria.Descripcion = (String)datos.Lector["Categoria"];
+                    aux.Marca.Descripcion = (String)datos.Lector["Marca"];
+                    aux.Categoria.Descripcion = (String)datos.Lector["Categoria"];
 
                     if (!(datos.Lector["ImagenUrl"] is DBNull))  aux.ImagenUrl = (String)datos.Lector["ImagenUrl"];
 
@@ -43,6 +44,64 @@ namespace Negocio
 
                 return lista;
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void agregarArticulo(Articulo nuevoArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, ImagenUrl, IdMarca,  IdCategoria, Precio) VALUES (@Codigo, @Nombre, @Descripcion, @ImagenUrl, @IdMarca, @IdCategoria, @Precio)");
+                datos.SetearParametro("@Codigo", nuevoArticulo.Codigo);
+                datos.SetearParametro("@Nombre", nuevoArticulo.Nombre);
+                datos.SetearParametro("@Descripcion", nuevoArticulo.Descripcion);
+                datos.SetearParametro("@ImagenUrl", nuevoArticulo.ImagenUrl);
+                datos.SetearParametro("@IdMarca", nuevoArticulo.Marca.Id);
+                datos.SetearParametro("@IdCategoria", nuevoArticulo.Categoria.Id);
+                datos.SetearParametro("@Precio", nuevoArticulo.Precio);
+                datos.SetearParametro("@Id", nuevoArticulo.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void modificarArticulo(Articulo nuevoArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("Update ARTICULOS Set Codigo = @Codigo, Nombre =@Nombre, Descripcion = @Descripcion, ImagenUrl = @ImagenUrl, IdMarca = @Marca,  IdCategoria = @IdCategoria, Precio = @Precio where Id = @Id");
+                datos.SetearParametro("@Codigo", nuevoArticulo.Codigo);
+                datos.SetearParametro("@Nombre", nuevoArticulo.Nombre);
+                datos.SetearParametro("@Descripcion", nuevoArticulo.Descripcion);
+                datos.SetearParametro("@ImagenUrl", nuevoArticulo.ImagenUrl);
+                datos.SetearParametro("@IdMarca", nuevoArticulo.Marca.Id);
+                datos.SetearParametro("@IdCategoria", nuevoArticulo.Categoria.Id);
+                datos.SetearParametro("@Precio", nuevoArticulo.Precio);
+                datos.SetearParametro("@Id", nuevoArticulo.Id);
+
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {

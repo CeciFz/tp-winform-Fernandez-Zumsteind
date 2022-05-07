@@ -22,6 +22,13 @@ namespace AppCatalogo
             InitializeComponent();
         }
 
+        public frmListarArticulos(bool flag = false)
+        {
+            InitializeComponent();
+            lbltitulo.Text = "Seleccione el artículo que desea modificar";
+            cargarArticulos();
+        }
+
 
         private void cargarArticulos()
         {
@@ -47,15 +54,6 @@ namespace AppCatalogo
         {
 
                 cargarArticulos();  
-            /* ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            dgvArticulos.DataSource = articuloNegocio.listarArticulos();
-           
-            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-            dgvCategoria.DataSource = categoriaNegocio.listarCategoria();
-
-            MarcaNegocio MarcaNegocio = new MarcaNegocio();
-            dgvMarca.DataSource = MarcaNegocio.listarMarca();*/
-
         }
 
         private void cargarImagen(String imgArticulo)
@@ -75,6 +73,14 @@ namespace AppCatalogo
         {
             Articulo imgArticulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             cargarImagen(imgArticulo.ImagenUrl);
+        }
+
+        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           Articulo opcion;
+           opcion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+           frmArticulo modificarArticulo = new frmArticulo();
+           modificarArticulo.ShowDialog();
         }
     }
 }

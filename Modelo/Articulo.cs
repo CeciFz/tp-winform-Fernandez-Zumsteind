@@ -17,11 +17,10 @@ namespace Dominio
         [DisplayName("Descripción")]
         public string Descripcion { get; set; }
 
-        [DisplayName("Marca")]
-        public Marca IdMarca { get; set; }
+        public Marca Marca { get; set; }
 
         [DisplayName("Categoría")]
-        public Categoria IdCategoria { get; set; }
+        public Categoria Categoria { get; set; }
         public string ImagenUrl { get; set; }
         public decimal Precio { get; set; }
     }

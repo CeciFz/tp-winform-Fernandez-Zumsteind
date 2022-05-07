@@ -33,12 +33,12 @@ namespace AppCatalogo
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.c = new System.Windows.Forms.Button();
+            this.buttonAgregar = new System.Windows.Forms.Button();
             this.buttonlistar = new System.Windows.Forms.Button();
             this.buttonbuscar = new System.Windows.Forms.Button();
             this.buttonmodificar = new System.Windows.Forms.Button();
             this.buttoneliminar = new System.Windows.Forms.Button();
-            this.buttondestalle = new System.Windows.Forms.Button();
+            this.buttondetalle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelmenu
@@ -83,18 +83,19 @@ namespace AppCatalogo
             this.label4.TabIndex = 3;
             this.label4.UseCompatibleTextRendering = true;
             // 
-            // c
+            // buttonAgregar
             // 
-            this.c.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.c.AutoSize = true;
-            this.c.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.c.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.c.Location = new System.Drawing.Point(293, 205);
-            this.c.Name = "c";
-            this.c.Size = new System.Drawing.Size(212, 92);
-            this.c.TabIndex = 4;
-            this.c.Text = "Agregar articulos";
-            this.c.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonAgregar.AutoSize = true;
+            this.buttonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAgregar.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.Location = new System.Drawing.Point(293, 205);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(212, 92);
+            this.buttonAgregar.TabIndex = 4;
+            this.buttonAgregar.Text = "Agregar articulos";
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // buttonlistar
             // 
@@ -136,6 +137,7 @@ namespace AppCatalogo
             this.buttonmodificar.TabIndex = 7;
             this.buttonmodificar.Text = "Modificar articulos";
             this.buttonmodificar.UseVisualStyleBackColor = true;
+            this.buttonmodificar.Click += new System.EventHandler(this.buttonmodificar_Click);
             // 
             // buttoneliminar
             // 
@@ -151,18 +153,18 @@ namespace AppCatalogo
             this.buttoneliminar.UseVisualStyleBackColor = true;
             this.buttoneliminar.Click += new System.EventHandler(this.buttoneliminar_Click);
             // 
-            // buttondestalle
+            // buttondetalle
             // 
-            this.buttondestalle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttondestalle.AutoSize = true;
-            this.buttondestalle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttondestalle.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttondestalle.Location = new System.Drawing.Point(568, 204);
-            this.buttondestalle.Name = "buttondestalle";
-            this.buttondestalle.Size = new System.Drawing.Size(212, 92);
-            this.buttondestalle.TabIndex = 9;
-            this.buttondestalle.Text = "Ver detalle\r\narticulo";
-            this.buttondestalle.UseVisualStyleBackColor = true;
+            this.buttondetalle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttondetalle.AutoSize = true;
+            this.buttondetalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttondetalle.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttondetalle.Location = new System.Drawing.Point(568, 204);
+            this.buttondetalle.Name = "buttondetalle";
+            this.buttondetalle.Size = new System.Drawing.Size(212, 92);
+            this.buttondetalle.TabIndex = 9;
+            this.buttondetalle.Text = "Ver detalle\r\narticulo";
+            this.buttondetalle.UseVisualStyleBackColor = true;
             // 
             // frmmenu
             // 
@@ -170,12 +172,12 @@ namespace AppCatalogo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(805, 497);
-            this.Controls.Add(this.buttondestalle);
+            this.Controls.Add(this.buttondetalle);
             this.Controls.Add(this.buttoneliminar);
             this.Controls.Add(this.buttonmodificar);
             this.Controls.Add(this.buttonbuscar);
             this.Controls.Add(this.buttonlistar);
-            this.Controls.Add(this.c);
+            this.Controls.Add(this.buttonAgregar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -197,11 +199,11 @@ namespace AppCatalogo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button c;
+        private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.Button buttonlistar;
         private System.Windows.Forms.Button buttonbuscar;
         private System.Windows.Forms.Button buttonmodificar;
         private System.Windows.Forms.Button buttoneliminar;
-        private System.Windows.Forms.Button buttondestalle;
+        private System.Windows.Forms.Button buttondetalle;
     }
 }
