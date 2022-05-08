@@ -74,7 +74,6 @@ namespace AppCatalogo
         private void frmArticulo_Load(object sender, EventArgs e)
         {
 
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
@@ -82,8 +81,8 @@ namespace AppCatalogo
             {
 
                 cboMarca.DataSource = marcaNegocio.listarMarca();
-                cboCategoria.ValueMember = "Id";
-                cboCategoria.DisplayMember = "Descripcion";
+                cboMarca.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";
                 cboCategoria.DataSource = categoriaNegocio.listarCategoria();
                 cboCategoria.ValueMember = "Id";
                 cboCategoria.DisplayMember = "Descripcion";
@@ -94,12 +93,12 @@ namespace AppCatalogo
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
                     txtUrlImg.Text = articulo.ImagenUrl;
+                    txtPrecio.Text = articulo.Precio.ToString("0.00");
+
                     cargarImagen(articulo.ImagenUrl);
 
-                    cboMarca.SelectedValue = articulo.Marca.Id;
                     cboCategoria.SelectedValue = articulo.Categoria.Id;
-                    txtPrecio.Text = articulo.Precio.ToString();
-
+                    cboMarca.SelectedValue = articulo.Marca.Id;
                 }
 
             }
