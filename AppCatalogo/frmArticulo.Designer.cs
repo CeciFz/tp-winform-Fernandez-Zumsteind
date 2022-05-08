@@ -41,7 +41,7 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
-            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.buttonConfirmar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.txtUrlImg = new System.Windows.Forms.TextBox();
             this.lblUrlImg = new System.Windows.Forms.Label();
@@ -110,7 +110,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(311, 381);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(211, 20);
-            this.txtPrecio.TabIndex = 12;
+            this.txtPrecio.TabIndex = 14;
             // 
             // lblPrecio
             // 
@@ -118,7 +118,7 @@
             this.lblPrecio.Location = new System.Drawing.Point(308, 365);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 13);
-            this.lblPrecio.TabIndex = 11;
+            this.lblPrecio.TabIndex = 13;
             this.lblPrecio.Text = "Precio:";
             // 
             // lblCategoria
@@ -127,7 +127,7 @@
             this.lblCategoria.Location = new System.Drawing.Point(308, 308);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(57, 13);
-            this.lblCategoria.TabIndex = 9;
+            this.lblCategoria.TabIndex = 11;
             this.lblCategoria.Text = "Categoría:";
             // 
             // lblMarca
@@ -136,7 +136,7 @@
             this.lblMarca.Location = new System.Drawing.Point(308, 254);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(40, 13);
-            this.lblMarca.TabIndex = 7;
+            this.lblMarca.TabIndex = 9;
             this.lblMarca.Text = "Marca:";
             // 
             // cboMarca
@@ -146,7 +146,7 @@
             this.cboMarca.Location = new System.Drawing.Point(311, 271);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(211, 21);
-            this.cboMarca.TabIndex = 13;
+            this.cboMarca.TabIndex = 10;
             // 
             // cboCategoria
             // 
@@ -155,17 +155,17 @@
             this.cboCategoria.Location = new System.Drawing.Point(311, 324);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(211, 21);
-            this.cboCategoria.TabIndex = 14;
+            this.cboCategoria.TabIndex = 12;
             // 
-            // buttonAgregar
+            // buttonConfirmar
             // 
-            this.buttonAgregar.Location = new System.Drawing.Point(31, 372);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(79, 36);
-            this.buttonAgregar.TabIndex = 15;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            this.buttonConfirmar.Location = new System.Drawing.Point(31, 372);
+            this.buttonConfirmar.Name = "buttonConfirmar";
+            this.buttonConfirmar.Size = new System.Drawing.Size(79, 36);
+            this.buttonConfirmar.TabIndex = 15;
+            this.buttonConfirmar.Text = "Confirmar";
+            this.buttonConfirmar.UseVisualStyleBackColor = true;
+            this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
             // 
             // buttonCancelar
             // 
@@ -182,7 +182,7 @@
             this.txtUrlImg.Location = new System.Drawing.Point(311, 218);
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(211, 20);
-            this.txtUrlImg.TabIndex = 18;
+            this.txtUrlImg.TabIndex = 8;
             this.txtUrlImg.Leave += new System.EventHandler(this.txtUrlImg_Leave);
             // 
             // lblUrlImg
@@ -191,7 +191,7 @@
             this.lblUrlImg.Location = new System.Drawing.Point(308, 202);
             this.lblUrlImg.Name = "lblUrlImg";
             this.lblUrlImg.Size = new System.Drawing.Size(89, 13);
-            this.lblUrlImg.TabIndex = 17;
+            this.lblUrlImg.TabIndex = 7;
             this.lblUrlImg.Text = "Url de la imagen: ";
             // 
             // frmArticulo
@@ -202,7 +202,7 @@
             this.Controls.Add(this.txtUrlImg);
             this.Controls.Add(this.lblUrlImg);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonAgregar);
+            this.Controls.Add(this.buttonConfirmar);
             this.Controls.Add(this.cboCategoria);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.txtPrecio);
@@ -240,7 +240,7 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.Button buttonConfirmar;
         private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.TextBox txtUrlImg;
         private System.Windows.Forms.Label lblUrlImg;

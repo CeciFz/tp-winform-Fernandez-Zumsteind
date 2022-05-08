@@ -165,6 +165,7 @@ namespace AppCatalogo
             this.buttondetalle.TabIndex = 9;
             this.buttondetalle.Text = "Ver detalle\r\nartículo";
             this.buttondetalle.UseVisualStyleBackColor = true;
+            this.buttondetalle.Click += new System.EventHandler(this.buttondetalle_Click);
             // 
             // frmmenu
             // 

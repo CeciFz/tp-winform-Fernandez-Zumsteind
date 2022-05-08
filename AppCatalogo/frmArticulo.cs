@@ -33,7 +33,7 @@ namespace AppCatalogo
             Close();
         }
 
-        private void buttonAgregar_Click(object sender, EventArgs e)
+        private void buttonConfirmar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
