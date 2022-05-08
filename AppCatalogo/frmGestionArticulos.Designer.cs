@@ -124,6 +124,7 @@ namespace AppCatalogo
             this.buttonbuscar.TabIndex = 6;
             this.buttonbuscar.Text = "Buscar articulo";
             this.buttonbuscar.UseVisualStyleBackColor = true;
+            this.buttonbuscar.Click += new System.EventHandler(this.buttonbuscar_Click);
             // 
             // buttonmodificar
             // 

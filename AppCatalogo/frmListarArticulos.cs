@@ -50,10 +50,10 @@ namespace AppCatalogo
         }
 
 
-            private void frmListarArticulos_Load(object sender, EventArgs e)
+        private void frmListarArticulos_Load(object sender, EventArgs e)
         {
 
-                cargarArticulos();  
+            cargarArticulos();
         }
 
         private void cargarImagen(String imgArticulo)
@@ -77,10 +77,29 @@ namespace AppCatalogo
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           Articulo opcion;
-           opcion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-           frmArticulo modificarArticulo = new frmArticulo();
-           modificarArticulo.ShowDialog();
+            Articulo opcion;
+            opcion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmArticulo modificarArticulo = new frmArticulo();
+            modificarArticulo.ShowDialog();
+        }
+
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void labelFiltro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       //Buscar por filtro de nombre
+        private void buttonbuscar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listafiltrada;
+            listafiltrada = listaArticulos.FindAll (x => x.Codigo == txtfiltro.Text);
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listafiltrada;
         }
     }
 }
