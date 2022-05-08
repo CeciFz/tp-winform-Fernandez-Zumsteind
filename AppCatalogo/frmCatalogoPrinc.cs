@@ -19,36 +19,16 @@ namespace AppCatalogo
             InitializeComponent();
         }
 
-        private void frmCatalogoPrinc_Load(object sender, EventArgs e)
+        private void btnVerCatalogo_Click(object sender, EventArgs e)
         {
-           ///
-
+            frmCatalogo catalogo = new frmCatalogo();
+            catalogo.ShowDialog();
         }
 
-        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAdministrar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void entrar_Click(object sender, EventArgs e)
-        {
-             frmmenu ventana = new frmmenu();
-            ///ventana.MdiParent = this;
-
-            ventana.ShowDialog();
-            
-
-
-        }
-
-        private void dgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvMarca_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            frmmenu menu = new frmmenu();
+            menu.ShowDialog();
         }
     }
 }

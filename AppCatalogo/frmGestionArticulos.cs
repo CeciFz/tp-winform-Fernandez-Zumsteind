@@ -50,10 +50,8 @@ namespace AppCatalogo
 
         private void buttondetalle_Click(object sender, EventArgs e)
         {
-            /*frmListarArticulos seleccionarArticulo = new frmListarArticulos(true);
-            seleccionarArticulo.ShowDialog();*/
-            frmCatalogo catalogo = new frmCatalogo();
-            catalogo.ShowDialog();
+            frmListarArticulos seleccionarArticulo = new frmListarArticulos(true);
+            seleccionarArticulo.ShowDialog();
         }
     }
 }
