@@ -18,21 +18,23 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("select A.ID, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion Marca, C.Descripcion Categoria, A.Precio, A.ImagenUrl from ARTICULOS A, MARCAS M, CATEGORIAS C where M.Id = A.IdMarca AND C.Id = A.IdCategoria");
+                datos.setearConsulta("select A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion Marca, C.Descripcion Categoria, A.Precio, A.ImagenUrl, A.IdMarca, A.IdCategoria from ARTICULOS A, MARCAS M, CATEGORIAS C where M.Id = A.IdMarca AND C.Id = A.IdCategoria");
                 datos.lecturaDatos();
 
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Id = (int)datos.Lector["id"];
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     aux.Marca = new Marca();
-                    aux.Categoria = new Categoria();
-
+                    aux.Marca.Id = (int)datos.Lector["IdMarca"];
                     aux.Marca.Descripcion = (String)datos.Lector["Marca"];
+
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
                     aux.Categoria.Descripcion = (String)datos.Lector["Categoria"];
 
                     if (!(datos.Lector["ImagenUrl"] is DBNull))  aux.ImagenUrl = (String)datos.Lector["ImagenUrl"];
@@ -92,7 +94,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Update ARTICULOS Set Codigo = @Codigo, Nombre =@Nombre, Descripcion = @Descripcion, ImagenUrl = @ImagenUrl, IdMarca = @Marca,  IdCategoria = @IdCategoria, Precio = @Precio where Id = @Id");
+                datos.setearConsulta("Update ARTICULOS Set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, ImagenUrl = @ImagenUrl, IdMarca = @IdMarca,  IdCategoria = @IdCategoria, Precio = @Precio where Id = @Id");
                 datos.SetearParametro("@Codigo", nuevoArticulo.Codigo);
                 datos.SetearParametro("@Nombre", nuevoArticulo.Nombre);
                 datos.SetearParametro("@Descripcion", nuevoArticulo.Descripcion);

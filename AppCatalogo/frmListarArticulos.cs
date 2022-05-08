@@ -16,16 +16,18 @@ namespace AppCatalogo
     {
 
         private List<Articulo> listaArticulos;
+        bool modifica = false;
 
         public frmListarArticulos()
         {
             InitializeComponent();
         }
 
-        public frmListarArticulos(bool flag = false)
+        public frmListarArticulos(bool modifica)
         {
             InitializeComponent();
             lbltitulo.Text = "Seleccione el artículo que desea modificar";
+            this.modifica = modifica;
             cargarArticulos();
         }
 
@@ -77,10 +79,14 @@ namespace AppCatalogo
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Articulo opcion;
-            opcion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmArticulo modificarArticulo = new frmArticulo();
-            modificarArticulo.ShowDialog();
+            if (modifica == true)
+            {
+                Articulo opcion;
+                opcion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmArticulo modificarArticulo = new frmArticulo(opcion);
+                modificarArticulo.ShowDialog();
+                cargarArticulos();
+            }
         }
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
