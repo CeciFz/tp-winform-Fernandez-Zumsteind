@@ -22,7 +22,8 @@ namespace AppCatalogo
 
         private void buttoneliminar_Click(object sender, EventArgs e)
         {
-
+            frmListarArticulos ventana = new frmListarArticulos(false);
+            ventana.ShowDialog();
         }
 
         private void v_Load(object sender, EventArgs e)

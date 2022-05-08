@@ -35,6 +35,7 @@ namespace AppCatalogo
             this.labelFiltro = new System.Windows.Forms.Label();
             this.txtfiltro = new System.Windows.Forms.TextBox();
             this.buttonbuscar = new System.Windows.Forms.Button();
+            this.buttoneliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFotoArticulo)).BeginInit();
             this.SuspendLayout();
@@ -64,11 +65,12 @@ namespace AppCatalogo
             this.lbltitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbltitulo.AutoSize = true;
             this.lbltitulo.Font = new System.Drawing.Font("Rockwell", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltitulo.Location = new System.Drawing.Point(372, 24);
+            this.lbltitulo.Location = new System.Drawing.Point(374, 19);
             this.lbltitulo.Name = "lbltitulo";
             this.lbltitulo.Size = new System.Drawing.Size(303, 36);
             this.lbltitulo.TabIndex = 6;
             this.lbltitulo.Text = "Listado de Artículos";
+            this.lbltitulo.Click += new System.EventHandler(this.lbltitulo_Click);
             // 
             // pbxFotoArticulo
             // 
@@ -107,12 +109,23 @@ namespace AppCatalogo
             this.buttonbuscar.UseVisualStyleBackColor = true;
             this.buttonbuscar.Click += new System.EventHandler(this.buttonbuscar_Click);
             // 
+            // buttoneliminar
+            // 
+            this.buttoneliminar.Location = new System.Drawing.Point(532, 95);
+            this.buttoneliminar.Name = "buttoneliminar";
+            this.buttoneliminar.Size = new System.Drawing.Size(82, 20);
+            this.buttoneliminar.TabIndex = 11;
+            this.buttoneliminar.Text = "Eliminar";
+            this.buttoneliminar.UseVisualStyleBackColor = true;
+            this.buttoneliminar.Click += new System.EventHandler(this.buttoneliminar_Click);
+            // 
             // frmListarArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1053, 480);
+            this.Controls.Add(this.buttoneliminar);
             this.Controls.Add(this.buttonbuscar);
             this.Controls.Add(this.txtfiltro);
             this.Controls.Add(this.labelFiltro);
@@ -137,5 +150,6 @@ namespace AppCatalogo
         private System.Windows.Forms.Label labelFiltro;
         private System.Windows.Forms.TextBox txtfiltro;
         private System.Windows.Forms.Button buttonbuscar;
+        private System.Windows.Forms.Button buttoneliminar;
     }
 }

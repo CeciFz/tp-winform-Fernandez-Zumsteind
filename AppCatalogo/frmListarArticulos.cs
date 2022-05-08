@@ -37,7 +37,7 @@ namespace AppCatalogo
             {
                 listaArticulos = articuloNegocio.listarArticulos();
                 dgvArticulos.DataSource = listaArticulos;
-                dgvArticulos.Columns["Id"].Visible = false;
+                dgvArticulos.Columns["Id"].Visible = true;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
                 pbxFotoArticulo.Load(listaArticulos[0].ImagenUrl);
 
@@ -100,6 +100,37 @@ namespace AppCatalogo
             listafiltrada = listaArticulos.FindAll (x => x.Codigo == txtfiltro.Text);
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listafiltrada;
+        }
+
+
+        //ELIMINA POR NUMERO DE ID ARTICULO
+        private void buttoneliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                negocio.eliminar(seleccionado.Id);
+
+                MessageBox.Show("Eliminacion con exito");
+
+                cargarArticulos();
+                
+                
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void lbltitulo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
