@@ -88,21 +88,21 @@ namespace Negocio
             }
         }
 
-        public void modificarArticulo(Articulo nuevoArticulo)
+        public void modificarArticulo(Articulo articulo)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
                 datos.setearConsulta("Update ARTICULOS Set Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, ImagenUrl = @ImagenUrl, IdMarca = @IdMarca,  IdCategoria = @IdCategoria, Precio = @Precio where Id = @Id");
-                datos.SetearParametro("@Codigo", nuevoArticulo.Codigo);
-                datos.SetearParametro("@Nombre", nuevoArticulo.Nombre);
-                datos.SetearParametro("@Descripcion", nuevoArticulo.Descripcion);
-                datos.SetearParametro("@ImagenUrl", nuevoArticulo.ImagenUrl);
-                datos.SetearParametro("@IdMarca", nuevoArticulo.Marca.Id);
-                datos.SetearParametro("@IdCategoria", nuevoArticulo.Categoria.Id);
-                datos.SetearParametro("@Precio", nuevoArticulo.Precio);
-                datos.SetearParametro("@Id", nuevoArticulo.Id);
+                datos.SetearParametro("@Codigo", articulo.Codigo);
+                datos.SetearParametro("@Nombre", articulo.Nombre);
+                datos.SetearParametro("@Descripcion", articulo.Descripcion);
+                datos.SetearParametro("@ImagenUrl", articulo.ImagenUrl);
+                datos.SetearParametro("@IdMarca", articulo.Marca.Id);
+                datos.SetearParametro("@IdCategoria", articulo.Categoria.Id);
+                datos.SetearParametro("@Precio", articulo.Precio);
+                datos.SetearParametro("@Id", articulo.Id);
 
                 datos.ejecutarAccion();
             }

@@ -54,5 +54,11 @@ namespace AppCatalogo
             frmListarArticulos ventana = new frmListarArticulos(false);
             ventana.ShowDialog();
         }
+
+        private void buttondetalle_Click(object sender, EventArgs e)
+        {
+            frmListarArticulos seleccionarArticulo = new frmListarArticulos(true);
+            seleccionarArticulo.ShowDialog();
+        }
     }
 }
