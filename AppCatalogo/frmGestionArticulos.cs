@@ -20,20 +20,22 @@ namespace AppCatalogo
             InitializeComponent();
         }
 
-        private void buttoneliminar_Click(object sender, EventArgs e)
+        private void btnListadoArticulos_Click(object sender, EventArgs e)
         {
-            frmListarArticulos ventana = new frmListarArticulos(false);
+            frmListarArticulos listado = new frmListarArticulos();
+            listado.ShowDialog();
+        }
+
+        private void buttonbuscar_Click(object sender, EventArgs e)
+        {
+            frmListarArticulos ventana = new frmListarArticulos("filtra");
             ventana.ShowDialog();
         }
 
-        private void v_Load(object sender, EventArgs e)  //TODO Eliminar
-        {
 
-        }
-
-        private void buttonlistar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmListarArticulos ventana = new frmListarArticulos();
+            frmListarArticulos ventana = new frmListarArticulos("elimina");
             ventana.ShowDialog();
         }
 
@@ -45,20 +47,15 @@ namespace AppCatalogo
 
         private void buttonmodificar_Click(object sender, EventArgs e)
         {
-            frmListarArticulos seleccionarArticulo  = new frmListarArticulos(true); 
+            frmListarArticulos seleccionarArticulo  = new frmListarArticulos("modifica"); 
             seleccionarArticulo.ShowDialog();   
         }
-
-        private void buttonbuscar_Click(object sender, EventArgs e)
-        {
-            frmListarArticulos ventana = new frmListarArticulos(false);
-            ventana.ShowDialog();
-        }
-
+       
         private void buttondetalle_Click(object sender, EventArgs e)
         {
-            frmListarArticulos seleccionarArticulo = new frmListarArticulos(true);
+            frmListarArticulos seleccionarArticulo = new frmListarArticulos("detalle");
             seleccionarArticulo.ShowDialog();
         }
+
     }
 }

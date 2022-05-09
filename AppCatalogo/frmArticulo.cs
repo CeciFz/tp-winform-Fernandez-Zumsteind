@@ -21,11 +21,25 @@ namespace AppCatalogo
             InitializeComponent();
         }
 
-        public frmArticulo(Articulo articulo)
+        public frmArticulo(Articulo articulo, string opcion)
         {
             InitializeComponent();
             this.articulo = articulo;
-            Text = "Modificar artículo";
+            if (opcion == "modifica") Text = "Modificar artículo";
+
+            else if (opcion == "detalle")
+            {
+                Text = "Detalle de artículo";
+                txtCodigo.ReadOnly = true;
+                txtNombre.ReadOnly = true;
+                txtDescripcion.ReadOnly = true;
+                txtUrlImg.ReadOnly = true;
+                txtPrecio.ReadOnly = true;
+                cboCategoria.Enabled = false;
+                cboMarca.Enabled = false;
+                buttonCancelar.Visible = false;
+                buttonConfirmar.Visible = false;
+            }
         }
 
         private void buttonCancelar_Click(object sender, EventArgs e)

@@ -120,7 +120,6 @@ namespace Negocio
 
         public void eliminar(int id)
         {
-
             try
             {
                 AccesoDatos datos = new AccesoDatos();

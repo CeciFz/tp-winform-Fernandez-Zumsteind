@@ -16,19 +16,38 @@ namespace AppCatalogo
     {
 
         private List<Articulo> listaArticulos;
-        bool modifica = false;
+        string opcion = "lista";  // modifica, elimina, filtra, detalle
 
         public frmListarArticulos()
         {
             InitializeComponent();
         }
 
-        public frmListarArticulos(bool modifica)
+        public frmListarArticulos(string opcion)
         {
+            this.opcion = opcion;
             InitializeComponent();
-            lbltitulo.Text = "Seleccione el artículo que desea modificar";
-            this.modifica = modifica;
+
+            if (opcion == "modifica")
+            {
+                lbltitulo.Text = "Modificar artículos";
+                lblInstrucciones.Text = "Hacer doble click sobre el artículo que desea modificar";
+                Text = "Modificar artículos";
+            }
+            else if (opcion == "elimina")
+            {
+                lblInstrucciones.Text = "Seleccione el artículo de la lista y presione Eliminar";
+                Text = "Eliminar artículos";
+                lbltitulo.Text = "Eliminar artículos";
+            }
+            else if (opcion == "detalle")
+            {
+                lblInstrucciones.Text = "Hacer doble click sobre el artículo que desea consultar";
+                Text = "Detalle de artículos";
+                lbltitulo.Text = "Detalle de artículos";
+            }
             cargarArticulos();
+
         }
 
 
@@ -39,8 +58,9 @@ namespace AppCatalogo
             {
                 listaArticulos = articuloNegocio.listarArticulos();
                 dgvArticulos.DataSource = listaArticulos;
-                dgvArticulos.Columns["Id"].Visible = true;
+                dgvArticulos.Columns["Id"].Visible = false;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
+                dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "0.00";
                 pbxFotoArticulo.Load(listaArticulos[0].ImagenUrl);
 
             }
@@ -54,6 +74,16 @@ namespace AppCatalogo
 
         private void frmListarArticulos_Load(object sender, EventArgs e)
         {
+            if (opcion == "filtra")
+            {
+                lblFiltro.Visible = true;
+                btnBuscar.Visible = true;
+                txtfiltro.Visible = true;
+            }
+            else if (opcion == "elimina")
+            {
+                btnEliminar.Visible = true;
+            }
 
             cargarArticulos();
         }
@@ -79,28 +109,26 @@ namespace AppCatalogo
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (modifica == true)
+            if (opcion == "modifica")
             {
-                Articulo opcion;
-                opcion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                frmArticulo modificarArticulo = new frmArticulo(opcion);
+                Articulo eleccion;
+                eleccion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmArticulo modificarArticulo = new frmArticulo(eleccion , opcion);
                 modificarArticulo.ShowDialog();
+                cargarArticulos();
+            }
+            else if (opcion == "detalle")
+            {
+                Articulo eleccion;
+                eleccion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmArticulo detalleArticulo = new frmArticulo(eleccion , opcion);
+                detalleArticulo.ShowDialog();
                 cargarArticulos();
             }
         }
 
-        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void labelFiltro_Click(object sender, EventArgs e)
-        {
-
-        }
-
        //Buscar por filtro de nombre
-        private void buttonbuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             List<Articulo> listafiltrada;
             listafiltrada = listaArticulos.FindAll (x => x.Codigo == txtfiltro.Text);
@@ -110,22 +138,22 @@ namespace AppCatalogo
 
 
         //ELIMINA POR NUMERO DE ID ARTICULO
-        private void buttoneliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             Articulo seleccionado;
             try
             {
-                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
-                negocio.eliminar(seleccionado.Id);
-
-                MessageBox.Show("Eliminacion con exito");
-
-                cargarArticulos();
+                DialogResult respuesta = MessageBox.Show("¿Desea eliminar el artículo seleccionado?","Eliminando artículo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionado.Id);
+                    MessageBox.Show("Artículo eliminado");
+                    cargarArticulos();
+                }
                 
-                
-
             }
             catch (Exception ex)
             {
@@ -134,9 +162,9 @@ namespace AppCatalogo
             }
         }
 
-        private void lbltitulo_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }
