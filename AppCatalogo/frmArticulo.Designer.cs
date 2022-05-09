@@ -72,7 +72,7 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCodigo.Location = new System.Drawing.Point(415, 69);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtCodigo.Name = "txtCodigo";
@@ -81,7 +81,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtNombre.Location = new System.Drawing.Point(415, 131);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtNombre.Name = "txtNombre";
@@ -100,7 +100,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtDescripcion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDescripcion.Location = new System.Drawing.Point(415, 197);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtDescripcion.Name = "txtDescripcion";
@@ -119,7 +119,7 @@
             // 
             // txtPrecio
             // 
-            this.txtPrecio.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPrecio.Location = new System.Drawing.Point(415, 440);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtPrecio.Name = "txtPrecio";
@@ -210,7 +210,7 @@
             // 
             // txtUrlImg
             // 
-            this.txtUrlImg.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtUrlImg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtUrlImg.Location = new System.Drawing.Point(415, 251);
             this.txtUrlImg.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtUrlImg.Name = "txtUrlImg";

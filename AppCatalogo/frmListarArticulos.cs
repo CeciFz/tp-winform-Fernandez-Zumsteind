@@ -27,7 +27,13 @@ namespace AppCatalogo
         {
             this.opcion = opcion;
             InitializeComponent();
+            setearOpcion(opcion);
+            cargarArticulos();
 
+        }
+
+        private void setearOpcion(string opcion)
+        {
             if (opcion == "modifica")
             {
                 lbltitulo.Text = "Modificar artículos";
@@ -46,8 +52,11 @@ namespace AppCatalogo
                 Text = "Detalle de artículos";
                 lbltitulo.Text = "Detalle de artículos";
             }
-            cargarArticulos();
-
+            else if (opcion == "filtra")
+            {
+                Text = "Filtrar artículos";
+                lbltitulo.Text = "Filtrar artículos";
+            }
         }
 
 
@@ -58,9 +67,7 @@ namespace AppCatalogo
             {
                 listaArticulos = articuloNegocio.listarArticulos();
                 dgvArticulos.DataSource = listaArticulos;
-                dgvArticulos.Columns["Id"].Visible = false;
-                dgvArticulos.Columns["ImagenUrl"].Visible = false;
-                dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "0.00";
+                detallesColumnas();
                 pbxFotoArticulo.Load(listaArticulos[0].ImagenUrl);
 
             }
@@ -88,6 +95,12 @@ namespace AppCatalogo
             cargarArticulos();
         }
 
+        private void detallesColumnas() {
+            dgvArticulos.Columns["Id"].Visible = false;
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
+            dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "0.00";
+        }
+
         private void cargarImagen(String imgArticulo)
         {
             try
@@ -103,8 +116,11 @@ namespace AppCatalogo
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo imgArticulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(imgArticulo.ImagenUrl);
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo imgArticulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(imgArticulo.ImagenUrl);
+            }
         }
 
         private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -130,10 +146,23 @@ namespace AppCatalogo
        //Buscar por filtro de nombre
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            List<Articulo> listafiltrada;
-            listafiltrada = listaArticulos.FindAll (x => x.Codigo == txtfiltro.Text);
+            List<Articulo> listaFiltrada;
+            string filtro = txtfiltro.Text;
+
+            if (filtro != "")
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Codigo.ToUpper() == filtro.ToUpper());
+                if (listaFiltrada.Count == 0) pbxFotoArticulo.Load("https://diccionarioactual.com/wp-content/uploads/2017/10/disponible-768x768.png");
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+            
             dgvArticulos.DataSource = null;
-            dgvArticulos.DataSource = listafiltrada;
+            dgvArticulos.DataSource = listaFiltrada;
+            detallesColumnas();
+
         }
 
 
