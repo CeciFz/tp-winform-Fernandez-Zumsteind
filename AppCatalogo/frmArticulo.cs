@@ -50,7 +50,7 @@ namespace AppCatalogo
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-
+            if (validaCarga()) return;
             try
             {
                 if (articulo == null) articulo = new Articulo();
@@ -138,6 +138,37 @@ namespace AppCatalogo
         private void txtUrlImg_Leave(object sender, EventArgs e)
         {
             cargarImagen(txtUrlImg.Text);
+        }
+
+        private bool validaCarga()
+        {
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                MessageBox.Show("Los campos con * son obligatorios");
+                return true;
+            }
+
+            if (!validaNumeros(txtPrecio.Text))
+            {
+                 MessageBox.Show("Solo ingresar números en Precio");
+                 return true;
+
+            }
+
+            return false;
+        }
+
+
+        private bool validaNumeros (string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (char.IsNumber(caracter))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -66,9 +66,9 @@
             this.lblCodigo.Location = new System.Drawing.Point(410, 51);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(57, 15);
+            this.lblCodigo.Size = new System.Drawing.Size(67, 15);
             this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Código:";
+            this.lblCodigo.Text = "* Código:";
             // 
             // txtCodigo
             // 
@@ -94,9 +94,9 @@
             this.lblNombre.Location = new System.Drawing.Point(410, 113);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(63, 15);
+            this.lblNombre.Size = new System.Drawing.Size(73, 15);
             this.lblNombre.TabIndex = 3;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "* Nombre:";
             // 
             // txtDescripcion
             // 
@@ -132,9 +132,9 @@
             this.lblPrecio.Location = new System.Drawing.Point(410, 421);
             this.lblPrecio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(53, 15);
+            this.lblPrecio.Size = new System.Drawing.Size(63, 15);
             this.lblPrecio.TabIndex = 13;
-            this.lblPrecio.Text = "Precio:";
+            this.lblPrecio.Text = "* Precio:";
             // 
             // lblCategoria
             // 
